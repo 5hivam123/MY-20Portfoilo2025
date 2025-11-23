@@ -1,22 +1,24 @@
-import { motion } from 'framer-motion';
-import { ExternalLink } from 'lucide-react';
+import { motion } from "framer-motion";
+import { ExternalLink } from "lucide-react";
 
 const projects = [
   {
     id: 1,
-    title: 'KIT Event Management System',
-    technologies: ['React', 'TypeScript', 'Supabase', 'Razorpay'],
-    description: 'Public site, Student portal, Admin dashboard with secure payments, analytics, and real-time updates',
-    features: ['Secure Payments', 'Analytics Dashboard', 'Real-time Updates'],
-    color: 'from-blue-600 to-cyan-600',
+    title: "KIT Event Management System",
+    technologies: ["React", "TypeScript", "Supabase", "Razorpay"],
+    description:
+      "Public site, Student portal, Admin dashboard with secure payments, analytics, and real-time updates",
+    features: ["Secure Payments", "Analytics Dashboard", "Real-time Updates"],
+    color: "from-blue-600 to-cyan-600",
   },
   {
     id: 2,
-    title: 'AI Health Chatbot',
-    technologies: ['JavaScript', 'NLP'],
-    description: 'Provides health-related answers with an interactive and user-friendly interface',
-    features: ['Health Information', 'Interactive UI', 'NLP Integration'],
-    color: 'from-green-600 to-emerald-600',
+    title: "AI Health Chatbot",
+    technologies: ["JavaScript", "NLP"],
+    description:
+      "Provides health-related answers with an interactive and user-friendly interface",
+    features: ["Health Information", "Interactive UI", "NLP Integration"],
+    color: "from-green-600 to-emerald-600",
   },
 ];
 
@@ -41,7 +43,10 @@ export function Projects() {
   };
 
   return (
-    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-950">
+    <section
+      id="projects"
+      className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-950"
+    >
       <div className="max-w-6xl mx-auto">
         <motion.h2
           className="text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white text-center mb-16"
@@ -68,7 +73,9 @@ export function Projects() {
               className="group bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-lg dark:shadow-xl hover:shadow-2xl dark:hover:shadow-2xl transition-all duration-300"
             >
               {/* Project Header */}
-              <div className={`h-32 bg-gradient-to-br ${project.color} opacity-90 group-hover:opacity-100 transition-opacity duration-300`}></div>
+              <div
+                className={`h-32 bg-gradient-to-br ${project.color} opacity-90 group-hover:opacity-100 transition-opacity duration-300`}
+              ></div>
 
               {/* Project Content */}
               <div className="p-6 sm:p-8">
@@ -116,7 +123,10 @@ export function Projects() {
                 {/* View Project Button */}
                 <button className="flex items-center gap-2 text-indigo-600 dark:text-indigo-400 font-semibold hover:gap-3 transition-all duration-300 group/btn">
                   <span>View Project</span>
-                  <ExternalLink size={16} className="group-hover/btn:translate-x-1 transition-transform duration-300" />
+                  <ExternalLink
+                    size={16}
+                    className="group-hover/btn:translate-x-1 transition-transform duration-300"
+                  />
                 </button>
               </div>
             </motion.div>

@@ -1,18 +1,20 @@
-import { motion } from 'framer-motion';
-import { Mail, Phone, Send } from 'lucide-react';
-import { useState } from 'react';
-import { Socials } from './Socials';
+import { motion } from "framer-motion";
+import { Mail, Phone, Send } from "lucide-react";
+import { useState } from "react";
+import { Socials } from "./Socials";
 
 export function Contact() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
+    name: "",
+    email: "",
+    message: "",
   });
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -25,21 +27,21 @@ export function Contact() {
     setLoading(true);
 
     try {
-      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-        method: 'POST',
+      const response = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+        method: "POST",
         body: JSON.stringify(formData),
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
       });
 
       if (response.ok) {
         setSubmitted(true);
-        setFormData({ name: '', email: '', message: '' });
+        setFormData({ name: "", email: "", message: "" });
         setTimeout(() => setSubmitted(false), 5000);
       }
     } catch (error) {
-      console.error('Form submission error:', error);
+      console.error("Form submission error:", error);
     } finally {
       setLoading(false);
     }
@@ -65,7 +67,10 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-950">
+    <section
+      id="contact"
+      className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-950"
+    >
       <div className="max-w-4xl mx-auto">
         <motion.h2
           className="text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white text-center mb-16"
@@ -92,10 +97,17 @@ export function Contact() {
             className="group flex flex-col items-center text-center p-6 bg-white dark:bg-slate-800 rounded-xl hover:shadow-lg dark:hover:shadow-lg transition-all duration-300"
           >
             <div className="p-3 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg mb-4 group-hover:bg-indigo-200 dark:group-hover:bg-indigo-800/50 transition-colors duration-300">
-              <Mail size={32} className="text-indigo-600 dark:text-indigo-400" />
+              <Mail
+                size={32}
+                className="text-indigo-600 dark:text-indigo-400"
+              />
             </div>
-            <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">Email</h3>
-            <p className="text-slate-600 dark:text-slate-400 text-sm break-all">231542@kit.ac.in</p>
+            <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">
+              Email
+            </h3>
+            <p className="text-slate-600 dark:text-slate-400 text-sm break-all">
+              231542@kit.ac.in
+            </p>
           </motion.a>
 
           {/* Phone */}
@@ -106,10 +118,17 @@ export function Contact() {
             className="group flex flex-col items-center text-center p-6 bg-white dark:bg-slate-800 rounded-xl hover:shadow-lg dark:hover:shadow-lg transition-all duration-300"
           >
             <div className="p-3 bg-purple-100 dark:bg-purple-900/30 rounded-lg mb-4 group-hover:bg-purple-200 dark:group-hover:bg-purple-800/50 transition-colors duration-300">
-              <Phone size={32} className="text-purple-600 dark:text-purple-400" />
+              <Phone
+                size={32}
+                className="text-purple-600 dark:text-purple-400"
+              />
             </div>
-            <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">Phone</h3>
-            <p className="text-slate-600 dark:text-slate-400 text-sm">+91 6394693168</p>
+            <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">
+              Phone
+            </h3>
+            <p className="text-slate-600 dark:text-slate-400 text-sm">
+              +91 6394693168
+            </p>
           </motion.a>
 
           {/* Location */}
@@ -121,8 +140,12 @@ export function Contact() {
             <div className="p-3 bg-pink-100 dark:bg-pink-900/30 rounded-lg mb-4 group-hover:bg-pink-200 dark:group-hover:bg-pink-800/50 transition-colors duration-300">
               <Send size={32} className="text-pink-600 dark:text-pink-400" />
             </div>
-            <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">Let's Talk</h3>
-            <p className="text-slate-600 dark:text-slate-400 text-sm">Always open to new opportunities</p>
+            <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">
+              Let's Talk
+            </h3>
+            <p className="text-slate-600 dark:text-slate-400 text-sm">
+              Always open to new opportunities
+            </p>
           </motion.div>
         </motion.div>
 
@@ -198,7 +221,7 @@ export function Contact() {
             whileTap={{ scale: 0.98 }}
             className="w-full px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-indigo-500/50 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 flex items-center justify-center gap-2"
           >
-            {loading ? 'Sending...' : 'Send Message'}
+            {loading ? "Sending..." : "Send Message"}
             <Send size={20} />
           </motion.button>
         </motion.form>

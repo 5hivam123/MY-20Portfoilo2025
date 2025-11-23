@@ -1,12 +1,12 @@
-import { motion } from 'framer-motion';
-import { Download, Send } from 'lucide-react';
-import { Socials } from './Socials';
+import { motion } from "framer-motion";
+import { Download, Send } from "lucide-react";
+import { Socials } from "./Socials";
 
 export function Hero() {
   const scrollToContact = () => {
-    const contactSection = document.getElementById('contact');
+    const contactSection = document.getElementById("contact");
     if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
+      contactSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -26,7 +26,7 @@ export function Hero() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: 'easeOut' },
+      transition: { duration: 0.8, ease: "easeOut" },
     },
   };
 
@@ -35,10 +35,14 @@ export function Hero() {
     visible: {
       opacity: 1,
       scale: 1,
-      transition: { duration: 0.8, ease: 'easeOut' },
+      transition: { duration: 0.8, ease: "easeOut" },
     },
     animate: {
-      boxShadow: ['0 0 20px rgba(99, 102, 241, 0.3)', '0 0 40px rgba(99, 102, 241, 0.5)', '0 0 20px rgba(99, 102, 241, 0.3)'],
+      boxShadow: [
+        "0 0 20px rgba(99, 102, 241, 0.3)",
+        "0 0 40px rgba(99, 102, 241, 0.5)",
+        "0 0 20px rgba(99, 102, 241, 0.3)",
+      ],
       transition: { duration: 3, repeat: Infinity },
     },
   };
@@ -80,7 +84,8 @@ export function Hero() {
           className="text-lg sm:text-xl lg:text-2xl text-slate-600 dark:text-slate-300 mb-12 leading-relaxed"
           variants={itemVariants}
         >
-          Aspiring Data Scientist | ML Explorer | Java & Spring Boot Backend Developer
+          Aspiring Data Scientist | ML Explorer | Java & Spring Boot Backend
+          Developer
         </motion.p>
 
         {/* Buttons */}
